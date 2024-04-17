@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>Encriptador de Texto (Chave Assimétrica)</h1>
+  <form id="myForm" action="" method="post">
+    <label for="texto">Digite seu Texto: </label>
+    <input name="texto" id="texto" type="text" placeholder="Digite aqui..." />
+    <button type="submit" onclick="mudarAction('/assimetric/keyGenerate')">Gerar
+      Chave</button>
+    <br />
+    <label for="publicKey">Chave Pública:</label>
+    <textarea
+      name="publicKey"
+      id="publicKey"
+      placeholder="Chave pública..."
+      rows="4"
+    >{{public}}</textarea>
+    <br />
+    <button
+      type="submit"
+      onclick="mudarAction('/assimetric/encript')"
+    >Codificar</button>
+    <button
+      type="submit"
+      onclick="mudarAction('/assimetric/decript')"
+    >Decodificar</button>
+    <br />
+    <textarea
+      class="encriptData"
+      name="dados"
+      cols="30"
+      rows="10"
+      disabled
+    >{{texto}}</textarea>
+  </form>
+</div>
+<script>
+  function mudarAction(action) { document.getElementById('myForm').action =
+  action; }
+</script>

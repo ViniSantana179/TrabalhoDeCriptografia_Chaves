@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>Encriptador de Texto (Chave Simetrica)</h1>
+  <form id="myForm" action="" method="post">
+    <label for="texto">Digite seu Texto: </label>
+    <input name="texto" id="texto" type="text" placeholder="Digite aqui..." />
+    <label for="chave">Chave Gerada: </label>
+    <input
+      name="chave"
+      id="chave"
+      type="text"
+      placeholder="Sua chave"
+      value="{{chave}}"
+    />
+    <button type="submit" onclick="mudarAction('/simetric/keyGenerate')">Gerar
+      Chave</button>
+    <button
+      type="submit"
+      onclick="mudarAction('/simetric/encript')"
+    >Codificar</button>
+    <button
+      type="submit"
+      onclick="mudarAction('/simetric/decript')"
+    >Decodificar</button>
+    <br />
+    <textarea
+      class="encriptData"
+      name="dados"
+      cols="30"
+      rows="10"
+      disabled
+    >{{texto}}</textarea>
+  </form>
+</div>
+<script>
+  function mudarAction(action) { document.getElementById('myForm').action =
+  action; }
+</script>
